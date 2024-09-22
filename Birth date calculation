@@ -1,0 +1,39 @@
+# We can import the datetime
+import datetime
+
+now = datetime.datetime.now()
+#We ask from user a birth date
+
+user_birth_date = input(" Please enter your birth date in DD.MM.YYYY format.")
+
+# String will be date time 
+user_birth_date_strp = datetime.datetime.strptime(user_birth_date, "%d.%m.%Y")
+
+# We will split the day, month and year
+day = user_birth_date_strp.day
+month = user_birth_date_strp.month
+year= user_birth_date_strp.year
+
+# Print the day, month and year
+print("Day:", day)
+print("Month:", month)
+print("Year:", year)
+
+
+if now.year-year >= 19:
+    print(" You are legal of age")
+
+elif now.year-year == 18:
+
+  if now.month > month:
+    print(" You are legal of age")
+  elif now.month == month :
+    if now.day>= day:
+      print(" You are legal of age")
+    else :
+        print(" You are not legal of age")
+  else:
+     print(" You are legal of age")
+else:
+    print(" You are not legal of age")
+      
